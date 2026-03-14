@@ -48,9 +48,9 @@ const Main = () => {
         <div className='card-container'>
             {
                 tool === '' ? 
-                    toolData.map(t => <ToolCard tool={t}/>)
+                    toolData.map((t,i) => <ToolCard key={i} tool={t}/>)
                     : 
-                    filteredTools.map(t => <ToolCard tool={t}/>)
+                    filteredTools.map((t,i) => <ToolCard key={i} tool={t}/>)
             }
         </div>
     </div>

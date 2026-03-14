@@ -1,6 +1,5 @@
 import '../css/toolcard.css'
 
-
 const ToolCard = ({tool}) => {
 
     return(
