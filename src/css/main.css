@@ -1,0 +1,35 @@
+.main{
+    background-color: #F9F9F9;
+    display: grid;
+    grid-template-rows: 100px 80px 20fr;
+    min-height: 100vh;
+}
+
+.main .nav{
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    border-bottom: 1px solid #000000;
+}
+
+.main .search-menu{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.main .search-menu input{
+    border: none;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.main .card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
