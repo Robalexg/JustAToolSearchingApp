@@ -1,5 +1,5 @@
 .main{
-    background-color: #F9F9F9;
+    background-color: #f9fafb;
     display: grid;
     grid-template-rows: 100px 80px 20fr;
     min-height: 100vh;
