@@ -9,7 +9,7 @@ const Main = () => {
     const [filteredTools, setFilteredTools] = useState([])
 
     const onChangeHandler = (e) => {
-        let val = e.target.value
+        let val = e.target.value.toLowerCase()
         setTool(val)
         if(val === ''){
             setFilteredTools([])
@@ -17,7 +17,7 @@ const Main = () => {
 
         let arr = []
         toolData.forEach(t => {
-            let sliced = t.tool.slice(0,val.length)
+            let sliced = t.tool.slice(0,val.length).toLowerCase()
             if(sliced === val){
                 arr.push(t)
             }
