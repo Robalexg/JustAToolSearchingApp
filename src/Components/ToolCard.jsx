@@ -7,7 +7,7 @@ const ToolCard = ({tool}) => {
             <div className='tool-img-container'>
                 <img src={`.${tool.image}`} alt="" />
             </div>
-            <div>
+            <div className='tool-text'>
                 <h1>{tool.tool}</h1>
                 <h2>{tool.name}</h2>
             </div>
