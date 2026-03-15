@@ -1,7 +1,6 @@
 import '../css/toolcard.css'
 
 const ToolCard = ({tool}) => {
-
     return(
         <div className='tool-card'>
             <div className='tool-img-container'>

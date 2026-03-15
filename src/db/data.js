@@ -314,7 +314,7 @@ export const tools = [
   {
     "tool": "205-072",
     "location": "1.5.1",
-    "image": null,
+    "image": './tool-images/205-072.jpg',
     "imageUrl": null,
     "imageExt": null,
     "name": "Wrench, Universal Flange Holding"
@@ -410,7 +410,7 @@ export const tools = [
   {
     "tool": "205-1018",
     "location": "7.5.1",
-    "image": null,
+    "image": "./tool-images/205-1018.jpg",
     "imageUrl": null,
     "imageExt": null,
     "name": "Tube, Installation"
