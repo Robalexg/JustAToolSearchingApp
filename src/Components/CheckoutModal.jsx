@@ -39,8 +39,9 @@ const CheckoutModal = ({ tool, onClose, history, isCheckedOut, currentCheckout, 
                         <div className='modal-section-label'>Check Out This Tool</div>
                         <div className='modal-fields'>
                             <div className='modal-field'>
-                                <label>RO Number</label>
+                                <label htmlFor='ro-number'>RO Number</label>
                                 <input
+                                    id='ro-number'
                                     type='text'
                                     placeholder='e.g. RO-48291'
                                     value={roNumber}
@@ -48,8 +49,9 @@ const CheckoutModal = ({ tool, onClose, history, isCheckedOut, currentCheckout, 
                                 />
                             </div>
                             <div className='modal-field'>
-                                <label>Technician Name</label>
+                                <label htmlFor='tech-name'>Technician Name</label>
                                 <input
+                                    id='tech-name'
                                     type='text'
                                     placeholder='e.g. J. Rivera'
                                     value={techName}
@@ -100,8 +102,8 @@ const CheckoutModal = ({ tool, onClose, history, isCheckedOut, currentCheckout, 
                         <div className='modal-history-empty'>No previous checkouts</div>
                     ) : (
                         <div className='modal-history-rows'>
-                            {[...completedHistory].reverse().map((r, i) => (
-                                <div className='modal-history-row' key={i}>
+                            {[...completedHistory].reverse().map((r) => (
+                                <div className='modal-history-row' key={r.checkoutDate}>
                                     <div><span>RO</span>{r.roNumber}</div>
                                     <div><span>Tech</span>{r.techName}</div>
                                     <div><span>Out</span>{fmt(r.checkoutDate)}</div>
