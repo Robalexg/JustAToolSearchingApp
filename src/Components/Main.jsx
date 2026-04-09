@@ -58,7 +58,7 @@ const Main = () => {
             </div>
 
             <div className='card-container'>
-                {displayedTools.map((t, i) => <ToolCard key={i} tool={t} />)}
+                {displayedTools.map((t) => <ToolCard key={t.tool} tool={t} />)}
             </div>
         </div>
     )
