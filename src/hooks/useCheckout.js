@@ -17,32 +17,36 @@ const save = (toolId, records) => {
 export const useCheckout = (toolId) => {
     const [history, setHistory] = useState(() => load(toolId))
 
-    const currentCheckout = history.at(-1)?.returnDate === null
-        ? history.at(-1)
-        : null
+    const lastRecord = history.at(-1)
+    const currentCheckout = lastRecord?.returnDate === null ? lastRecord : null
 
     const isCheckedOut = currentCheckout !== null
 
     const checkOut = (roNumber, techName) => {
-        const updated = [
-            ...history,
-            {
-                roNumber,
-                techName,
-                checkoutDate: new Date().toISOString(),
-                returnDate: null,
-            },
-        ]
-        save(toolId, updated)
-        setHistory(updated)
+        setHistory((prev) => {
+            const updated = [
+                ...prev,
+                {
+                    roNumber,
+                    techName,
+                    checkoutDate: new Date().toISOString(),
+                    returnDate: null,
+                },
+            ]
+            save(toolId, updated)
+            return updated
+        })
     }
 
     const checkIn = () => {
-        const updated = history.map((r, i) =>
-            i === history.length - 1 ? { ...r, returnDate: new Date().toISOString() } : r
-        )
-        save(toolId, updated)
-        setHistory(updated)
+        if (!currentCheckout) return
+        setHistory((prev) => {
+            const updated = prev.map((r, i) =>
+                i === prev.length - 1 ? { ...r, returnDate: new Date().toISOString() } : r
+            )
+            save(toolId, updated)
+            return updated
+        })
     }
 
     return { history, isCheckedOut, currentCheckout, checkOut, checkIn }
