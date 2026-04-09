@@ -2440,6 +2440,14 @@ export const tools = [
     "name": "Alignment Tool, Camshaft"
   },
   {
+    "tool": "303-1606",
+    "location": "5.11.3",
+    "image": "./tool-images/303-1605.jpg",
+    "imageUrl": "https://srs20assets.bosch-automotive.com/api/Srs20Assets.service-solutions.com/Media//OEM/Ford/en-US/Product/303-1605/Images/primary.jpg",
+    "imageExt": "jpg",
+    "name": "Alignment Tool, Camshaft"
+  },
+  {
     "tool": "303-1611",
     "location": "8.2.1",
     "image": "./tool-images/303-1611.jpg",
