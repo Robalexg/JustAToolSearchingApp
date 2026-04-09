@@ -291,5 +291,6 @@
 
     .modal-history-row {
         grid-template-columns: 1fr 1fr;
+        overflow-wrap: break-word;
     }
 }
