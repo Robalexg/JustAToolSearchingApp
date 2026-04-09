@@ -1,0 +1,271 @@
+/* ── Overlay ─────────────────────────────────────────────── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+}
+
+/* ── Modal box ───────────────────────────────────────────── */
+.modal {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    background: #003594;
+    color: white;
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.modal-header-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.modal-header-sub {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    line-height: 1;
+    padding: 0;
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+/* ── Checkout form (available state) ─────────────────────── */
+.modal-form {
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+}
+
+.modal-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-field label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.modal-field input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    background: white;
+    color: #111;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.modal-field input:focus {
+    border-color: #003594;
+    box-shadow: 0 0 0 2px rgba(0, 53, 148, 0.12);
+}
+
+.modal-submit {
+    margin-top: 14px;
+    width: 100%;
+    background: #003594;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.modal-submit:hover:not(:disabled) {
+    background: #002778;
+}
+
+.modal-submit:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* ── Checked-out panel ───────────────────────────────────── */
+.modal-checkedout {
+    padding: 16px 18px;
+    background: #fffbf0;
+    border-bottom: 1px solid #ffe082;
+}
+
+.modal-checkedout .modal-section-label {
+    color: #856404;
+}
+
+.modal-checkedout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.modal-checkedout-field span:first-child {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 0.06em;
+    margin-bottom: 2px;
+}
+
+.modal-checkedout-field span:last-child {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+}
+
+.modal-checkin {
+    width: 100%;
+    background: white;
+    color: #856404;
+    border: 1px solid #f0ad4e;
+    padding: 9px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.modal-checkin:hover {
+    background: #fff8e1;
+}
+
+/* ── History list ────────────────────────────────────────── */
+.modal-history {
+    padding: 14px 18px;
+}
+
+.modal-history-empty {
+    font-size: 12px;
+    color: #bbb;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.modal-history-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.modal-history-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    background: #f7f7f7;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+.modal-history-row span:first-child {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+/* ── Card status badge ───────────────────────────────────── */
+.tool-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.04em;
+}
+
+.badge-available {
+    background: #d4edda;
+    color: #276D36;
+}
+
+.badge-checkedout {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.tool-action-btn {
+    font-size: 11.5px;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: none;
+    background: #003594;
+    color: white;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.tool-action-btn:hover {
+    background: #002778;
+}
