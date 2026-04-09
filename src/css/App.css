@@ -41,3 +41,9 @@ body {
     grid-template-columns: var(--sidebar-w) 1fr;
     min-height: 100vh;
 }
+
+@media (max-width: 768px) {
+    .app {
+        grid-template-columns: 1fr;
+    }
+}
