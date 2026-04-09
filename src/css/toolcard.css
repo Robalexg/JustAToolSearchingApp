@@ -1,50 +1,111 @@
-.tool-card{
-    font-size: 15px;
-    padding: 50px;
-    border: 1px solid rgba(128, 128, 128, 0.233);
-    border-radius: 15px;
+.tool-card {
+    position: relative;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    cursor: pointer;
+    overflow: visible;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    transition:
+        box-shadow var(--transition),
+        border-color var(--transition);
+    animation: cardIn 0.25s ease both;
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.tool-card:hover {
+    border-color: #aaa;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+/* Image area */
+.tool-img-container {
+    height: 150px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    text-align: center;
-    gap: 20px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1) ;
-    background-color: white;
+    background-color: var(--surface-2);
+    border-bottom: 1px solid var(--border-soft);
+    margin: -16px -16px 12px;
+    width: calc(100% + 32px);
+    padding: 16px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
 }
 
-.tool-card img{
+.tool-img-container img {
+    max-width: 100%;
+    max-height: 118px;
+    object-fit: contain;
+}
+
+/* Tool number — blue link style like Rotunda */
+.tool-number {
     width: 100%;
-    height: auto;
-    max-height: 200px;
-    border-radius: 15px;
+    margin-bottom: 6px;
 }
 
-.tool-img-container{
+.tool-number-badge {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--link);
+    letter-spacing: 0;
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+.tool-number-badge:hover {
+    text-decoration: underline;
+}
+
+.tool-tag {
+    display: none;
+}
+
+/* Tool name */
+.tool-text {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tool-card .tool-name {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-soft);
+    line-height: 1.4;
+}
+
+/* Location row */
+.tool-location {
     display: flex;
     align-items: center;
-    width: 150px;
-    height: 200px;
-}
-
-.tool-card h1{
-    font-size: 20px;
-}
-
-.tool-card h2{
-    font-size: 12px;
-    color: grey;
-}
-
-.tool-card h3{
-    font-size: 25px;
-}
-
-.tool-text{
-    display: flex;
-    flex-direction: column;
     gap: 5px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-soft);
+    width: 100%;
 }
 
+.tool-location svg {
+    width: 11px;
+    height: 11px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
 
+.tool-location-text {
+    font-size: 15px;
+    color: var(--text-muted);
+    letter-spacing: 0;
+}
