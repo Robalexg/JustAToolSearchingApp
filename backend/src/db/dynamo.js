@@ -71,6 +71,7 @@ async function checkOut(toolId, { roNumber, techName }) {
  * @returns {Promise<Object>} the updated record
  */
 async function checkIn(toolId) {
+  console.log("toolID")
   const current = await getCurrentCheckout(toolId)
   if (!current) {
     const err = new Error('Tool is not currently checked out')

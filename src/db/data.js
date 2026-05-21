@@ -2225,7 +2225,7 @@ export const tools = [
   },
   {
     "tool": "303-1508",
-    "location": "16.9.8",
+    "location": "5.9.3",
     "image": "./tool-images/303-1508.gif",
     "imageUrl": "https://srs20assets.bosch-automotive.com/api/Srs20Assets.service-solutions.com/Media//OEM/Ford/en-US/Product/303-1508/images/primary.gif",
     "imageExt": "gif",

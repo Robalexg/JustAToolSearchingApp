@@ -11,12 +11,14 @@ router.get('/', async (req, res) => {
     const history = await getHistory(req.params.id)
     res.json(history)
   } catch (err) {
+    console.log("madeit",err)
     res.status(500).json({ error: 'Internal server error' })
   }
 })
 
 // POST /tools/:id/checkouts — check out
 router.post('/', async (req, res) => {
+
   const { roNumber, techName } = req.body ?? {}
   if (!roNumber?.trim() || !techName?.trim()) {
     return res.status(400).json({ error: 'roNumber and techName are required' })
@@ -35,6 +37,7 @@ router.post('/', async (req, res) => {
 
 // PUT /tools/:id/checkouts/checkin — check in
 router.put('/checkin', async (req, res) => {
+
   try {
     const record = await checkIn(req.params.id)
     res.json(record)
@@ -45,3 +48,5 @@ router.put('/checkin', async (req, res) => {
 })
 
 module.exports = router
+
+
