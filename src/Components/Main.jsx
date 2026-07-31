@@ -34,8 +34,6 @@ const Main = () => {
             <div className='nav'>
                 <h1><span>Tool</span> Search</h1>
                 <div className='nav-meta'>
-                    <span className='nav-dot'></span>
-                    <span>SYSTEM ONLINE</span>
                 </div>
             </div>
 
